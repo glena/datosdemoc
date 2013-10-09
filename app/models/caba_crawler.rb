@@ -1,5 +1,7 @@
 class CABACrawler
 
+  #es un asco, rehacer
+
   def self.get_pais
     Country.where(:name => 'Argentina').first
   end
