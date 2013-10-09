@@ -5,8 +5,12 @@ Trabajamos para lograr la centralización, normalización y distribución de Ope
 
 Es un proyecto que buscar centralizar los datos abiertos por las instituciones, normalizarlos y facilitar el acceso mediante un API Rest para que cualquiera pueda integrar OpenData en su proyecto.
 
+
+
 Datos democráticos - http://datosdemocraticos.com.ar
+
 En twitter: @datosdemoc http://twitter.com/datosdemoc
+
 En facebook: https://facebook.com/datosdemoc
 
 Arquitectura
