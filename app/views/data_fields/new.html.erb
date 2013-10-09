@@ -1,0 +1,7 @@
+<h1>Nuevo campo de la coleccion <%= @data_collection.name %></h1>
+
+<%
+   @url = data_collection_data_fields_path(@data_collection)
+%>
+
+<%= render 'form' %>

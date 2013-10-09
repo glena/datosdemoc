@@ -1,0 +1,152 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+.navbar-wrapper .navbar {
+    border-radius: 4px;
+}
+.navbar-wrapper {
+    padding-top: 20px;
+}
+.navbar-wrapper,.home-header {
+    background-color: rgb(119, 119, 119);
+}
+.home-header {
+    margin-bottom: 60px;
+    margin-top: -111px;
+    position: relative;
+    text-align: center;
+    padding-bottom: 20px;
+}
+.home-header > img{
+    margin: 100px auto 0;
+    display: inline-block;
+    width: 160px;
+}
+.home-header .content {
+    padding-top: 20px;
+    color: #ffffff;
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+.home-header .content p {
+    line-height: 25px;
+    font-size: 21px;
+}
+.boxes-caracteristicas,
+.boxes-first-row {
+    margin: 20px 50px 0;
+}
+.boxes-caracteristicas img {
+    box-shadow: 0 0 10px #999999;
+}
+.boxes-first-row img {
+    box-shadow: 0 0 10px #999999;
+}
+.boxes-first-row .box {
+    text-align: center;
+}
+
+.boton-titulo
+{
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.form-wrapper {
+    width: 700px;
+    margin: auto;
+}
+
+.modal-content .form-wrapper {
+    width: 100%;
+    margin: auto;
+}
+
+footer {
+    padding: 15px;
+    line-height: 20px;
+    background-color: #EEEEEE;
+    width: 100%;
+}
+
+footer p {
+    margin:0;
+}
+
+.nav>li>a {
+    padding: 10px 10px;
+}
+
+#apikey {
+    cursor: default;
+}
+
+.message {
+    text-align: center;
+    padding: 20px;
+}
+.message img {
+    width: 50%;
+}
+
+.alert {
+    max-width: 600px;
+    margin: 10px auto;
+}
+
+.spacer {
+    padding: 20px;
+}
+
+.tiles-list .row {
+    margin-bottom: 30px;
+}
+.tiles-list .box .content {
+    background-color: #DDDDDD;
+    padding:5px;
+}
+.tiles-list .box .content h2 {
+    font-size: 15px;
+    font-weight: bold;
+    margin: 0 0 5px 0;
+}
+.tiles-list .box .content h3{
+    font-size: 20px;
+    margin: 0 0 5px 0;
+    font-weight: bold;
+    display: inline-block;
+    height:40px
+}
+.tiles-list .box .content p{
+    display: inline-block;
+    margin: 10px 0;
+    height: 90px;
+}
+
+#demo-text {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.centered
+{
+    max-width: 920px;
+    margin: auto;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+h2 {
+    font-size: 2.5em;
+}

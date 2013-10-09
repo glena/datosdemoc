@@ -1,0 +1,12 @@
+<div><b><%= @current_url %></b></div>
+<hr>
+<div><b><%= @date %></b> - Exception:</div>
+<div><pre style="font-size: 13px;"><%=@err.message %></pre></div>
+<div><pre style="font-size: 13px;"><%=@err.inspect %></pre></div>
+<hr>
+<ul>
+    <li style="list-style: none;"><b>Trace</b></li>
+<% @err.backtrace.each do |line| %>
+    <li><%= line %></li>
+<% end %>
+</ul>
