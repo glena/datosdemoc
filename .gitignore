@@ -19,4 +19,7 @@ pickle-email-*.html
 config/initializers/secret_token.rb
 config/database.yml
 config/environments/production.rb
+<<<<<<< HEAD
 /db/*.sqlite3-journal
+=======
+>>>>>>> ac0e518522a299661a4e45cb0249c35ed0e26eac
