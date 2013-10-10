@@ -52,5 +52,8 @@ Datosdemocraticos::Application.routes.draw do
   post 'contacto' => 'index#contacto_send'
   get 'que-es-open-data-y-open-gov' => 'index#open_data_info', :as => :open_data_info
 
+  get 'admin' => 'admin#index', as: :admin_index
+  get 'admin/analytics' => 'analytics#stats', as: :admin_analytics
+
   get '' => 'index#home', :as => :home
 end
