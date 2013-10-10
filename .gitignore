@@ -20,4 +20,4 @@ config/database.yml
 config/environments/production.rb
 /db/*.sqlite3-journal
 /script
-
+/.idea
