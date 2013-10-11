@@ -7,6 +7,9 @@ Datosdemocraticos::Application.routes.draw do
       post '/*path', :to => redirect {|params| "http://datosdemocraticos.com.ar/#{params[:path]}"}
     end
   end
+  
+  #sitemap
+  get "sitemap.xml" => "sitemap#index", as: "sitemap", defaults: { format: "xml" }
 
   resources :users
 
@@ -51,6 +54,9 @@ Datosdemocraticos::Application.routes.draw do
   get 'contacto' => 'index#contacto', :as => :contacto
   post 'contacto' => 'index#contacto_send'
   get 'que-es-open-data-y-open-gov' => 'index#open_data_info', :as => :open_data_info
+
+  get 'admin' => 'admin#index', as: :admin_index
+  get 'admin/analytics' => 'analytics#stats', as: :admin_analytics
 
   get '' => 'index#home', :as => :home
 end
