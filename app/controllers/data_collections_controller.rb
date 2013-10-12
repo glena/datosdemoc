@@ -2,6 +2,7 @@
 class DataCollectionsController < ApplicationController
   before_action :set_menu_item
   before_action :check_if_admin
+  before_action :validate_admin, only:[:edit, :new, :update, :destroy, :create, :clone]
   before_action :set_data_collection, only: [:show, :edit, :update, :destroy]
 
   before_action :login_required, :except => ['index']
@@ -150,5 +151,11 @@ class DataCollectionsController < ApplicationController
       if not user.nil?
         @is_admin = user.is_admin?
       end
+    end
+
+    def validate_admin
+       if not @is_admin
+         self.render_404
+       end
     end
 end

@@ -4,6 +4,7 @@ require 'digest/sha1'
 
 class User < ActiveRecord::Base
   belongs_to :user_status
+  has_many :user_roles
 
   validates_uniqueness_of :email
   validates_presence_of :email, :password, :user_status
@@ -11,8 +12,15 @@ class User < ActiveRecord::Base
 
   def is_admin?
     admin = Role.get_admin
-    return (self.user_status.id == admin.id)
+
+    self.has_role? admin.id
   end
+
+  def has_role? role_id
+    roles = self.user_roles.map {|r| r.id}
+    (not roles.index(role_id).nil?)
+  end
+
 
   def get_salt
     return self.salt if not self.salt.nil?
