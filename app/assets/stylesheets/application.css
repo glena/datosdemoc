@@ -182,3 +182,25 @@ h2 {
 .filter span.category {
     font-weight: bold;
 }
+
+.pager {
+    display: inline-block;
+    padding: 0 50px;
+    line-height: 50px;
+    font-size: 20px;
+    margin: 15px;
+}
+
+.pager.page-number {
+    font-size: 15px;
+}
+.pager.next ,
+.pager.previous {
+    width: 200px;
+}
+a.pager.next {
+    background: transparent url('/assets/next.png') no-repeat center right;
+}
+a.pager.previous {
+    background: transparent url('/assets/previous.png') no-repeat center left;
+}

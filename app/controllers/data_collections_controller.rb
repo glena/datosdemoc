@@ -25,6 +25,7 @@ class DataCollectionsController < ApplicationController
 
     @data_collections = @data_collections.limit(limit).offset(limit * @page)
 
+    @total_pages = (count / limit).ceil
     @has_next_page = (limit * (@page + 1) < count)
 
     @categories = Category.all

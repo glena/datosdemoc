@@ -47,12 +47,18 @@
 
 
     <div class="row">
+      <span class="pager page-number">Página <strong><%= @page+1 %></strong> de <strong><%= @total_pages+1 %></strong></span>
+
       <% if @page > 0 %>
-          <a class="pull-left" href="<%= data_collections_path %>?page=<%= @page - 1 %>">Anterior</a>
+          <a class="pull-left pager previous" href="<%= data_collections_path %>?page=<%= @page - 1 %><%= @sel_category.nil? ? "" : "&category=#{@sel_category}"%>">Anterior</a>
+      <% else %>
+        <span class="pull-left pager previous">&nbsp;</span>
       <% end %>
 
       <% if @has_next_page %>
-          <a class="pull-right" href="<%= data_collections_path %>?page=<%= @page + 1 %>">Siguiente</a>
+          <a class="pull-right pager next" href="<%= data_collections_path %>?page=<%= @page + 1 %><%= @sel_category.nil? ? "" : "&category=#{@sel_category}"%>">Siguiente</a>
+      <% else %>
+          <span class="pull-right pager next">&nbsp;</span>
       <% end %>
       
       
