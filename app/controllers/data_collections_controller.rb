@@ -12,14 +12,22 @@ class DataCollectionsController < ApplicationController
     params[:page_title] = 'Listado de datasets de Open Data - Datos Democráticos'
     params[:page_description] = 'Listado de datasets de Open Data. Datos abiertos de instituciones principalmente gubernamentales (Open Gov).'
 
+    @sel_category = params[:category]
+
     @page = (params.has_key?(:page) ? params[:page].to_i : 0)
     limit = 16
 
-    @data_collections = DataCollection.all.limit(limit).offset(limit * @page)
+    @data_collections = DataCollection.all
+    if not @sel_category.nil?
+      @data_collections = @data_collections.joins('INNER JOIN data_collection_categories ON data_collection_categories.data_collection_id = data_collections.id').where('data_collection_categories.category_id = ?', @sel_category)
+    end
+    count = @data_collections.count
 
-    count = DataCollection.count
+    @data_collections = @data_collections.limit(limit).offset(limit * @page)
 
     @has_next_page = (limit * (@page + 1) < count)
+
+    @categories = Category.all
   end
 
   # GET /data_collections/1
@@ -36,6 +44,9 @@ class DataCollectionsController < ApplicationController
     else
       @data_collection = DataCollection.new
     end
+
+    @categories = Category.all
+    @selected_categories = []
   end
 
   def clone
@@ -51,6 +62,8 @@ class DataCollectionsController < ApplicationController
 
   # GET /data_collections/1/edit
   def edit
+    @categories = Category.all
+    @selected_categories = @data_collection.data_collection_categories.map {|c| c.category_id }
   end
 
   # POST /data_collections
@@ -74,6 +87,18 @@ class DataCollectionsController < ApplicationController
   def update
     respond_to do |format|
       if @data_collection.update(data_collection_params)
+
+        @data_collection.data_collection_categories.map {|el| el.destroy}
+
+        params[:categories].each do |category|
+
+          collection_category = DataCollectionCategory.new
+          collection_category.data_collection = @data_collection
+          collection_category.category_id = category
+          collection_category.save
+
+        end
+
         format.html { redirect_to importador_csv_path (@data_collection.id), notice: 'Data collection was successfully updated.' }
         format.json { head :no_content }
       else

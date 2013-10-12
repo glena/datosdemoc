@@ -4,6 +4,7 @@ class DataCollection < ActiveRecord::Base
   belongs_to :city
 
   has_many :data_fields
+  has_many :data_collection_categories
 
   def description_short
     description = self.description

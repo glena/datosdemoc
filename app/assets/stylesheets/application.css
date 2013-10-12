@@ -107,29 +107,40 @@ footer p {
     padding: 20px;
 }
 
-.tiles-list .row {
-    margin-bottom: 30px;
+.tiles-list.centered-boxes {
+    text-align: center;
+}
+
+.tiles-list .box {
+    padding: 5px;
+    width: 280px;
+    margin: auto;
+    text-align: left;
+    display: inline-block;
 }
 .tiles-list .box .content {
-    background-color: #DDDDDD;
-    padding:5px;
+    background-color: #EEEEEE;
+    box-shadow: 0 0 5px #DDDDDD;
+    padding:10px;
 }
 .tiles-list .box .content h2 {
-    font-size: 15px;
+    font-size: 12px;
     font-weight: bold;
     margin: 0 0 5px 0;
 }
 .tiles-list .box .content h3{
-    font-size: 20px;
+    font-size: 15px;
     margin: 0 0 5px 0;
     font-weight: bold;
     display: inline-block;
-    height:40px
+    height: 35px;
+    line-height: 18px;
 }
 .tiles-list .box .content p{
     display: inline-block;
     margin: 10px 0;
-    height: 90px;
+    height: 80px;
+    font-size: 13px;
 }
 
 #demo-text {
@@ -149,4 +160,25 @@ h1 {
 
 h2 {
     font-size: 2.5em;
+}
+
+.filter {
+    margin-bottom: 30px;
+}
+.filter .filter-title {
+    padding: 5px;
+    margin: 5px;
+    display: inline-block;
+    font-weight: bold;
+}
+.filter .category {
+    display: inline-block;
+    cursor: pointer;
+    background-color: #EEEEEE;
+    box-shadow: 0 0 5px #DDDDDD;
+    padding: 5px;
+    margin: 5px;
+}
+.filter span.category {
+    font-weight: bold;
 }

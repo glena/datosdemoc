@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131009002459) do
+ActiveRecord::Schema.define(version: 20131012023007) do
 
   create_table "api_uses", force: true do |t|
     t.integer  "user_id"
@@ -21,7 +21,13 @@ ActiveRecord::Schema.define(version: 20131009002459) do
     t.datetime "updated_at"
   end
 
-  add_index "api_uses", ["user_id"], name: "index_api_uses_on_user_id", using: :btree
+  add_index "api_uses", ["user_id"], name: "index_api_uses_on_user_id"
+
+  create_table "categories", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "cities", force: true do |t|
     t.string   "name"
@@ -30,13 +36,23 @@ ActiveRecord::Schema.define(version: 20131009002459) do
     t.datetime "updated_at"
   end
 
-  add_index "cities", ["province_id"], name: "index_cities_on_province_id", using: :btree
+  add_index "cities", ["province_id"], name: "index_cities_on_province_id"
 
   create_table "countries", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "data_collection_categories", force: true do |t|
+    t.integer  "data_collection_id"
+    t.integer  "category_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "data_collection_categories", ["category_id"], name: "index_data_collection_categories_on_category_id"
+  add_index "data_collection_categories", ["data_collection_id"], name: "index_data_collection_categories_on_data_collection_id"
 
   create_table "data_collections", force: true do |t|
     t.string   "name"
@@ -50,9 +66,9 @@ ActiveRecord::Schema.define(version: 20131009002459) do
     t.datetime "updated_at"
   end
 
-  add_index "data_collections", ["city_id"], name: "index_data_collections_on_city_id", using: :btree
-  add_index "data_collections", ["country_id"], name: "index_data_collections_on_country_id", using: :btree
-  add_index "data_collections", ["province_id"], name: "index_data_collections_on_province_id", using: :btree
+  add_index "data_collections", ["city_id"], name: "index_data_collections_on_city_id"
+  add_index "data_collections", ["country_id"], name: "index_data_collections_on_country_id"
+  add_index "data_collections", ["province_id"], name: "index_data_collections_on_province_id"
 
   create_table "data_fields", force: true do |t|
     t.string   "name"
@@ -63,8 +79,8 @@ ActiveRecord::Schema.define(version: 20131009002459) do
     t.datetime "updated_at"
   end
 
-  add_index "data_fields", ["data_collection_id"], name: "index_data_fields_on_data_collection_id", using: :btree
-  add_index "data_fields", ["data_type_id"], name: "index_data_fields_on_data_type_id", using: :btree
+  add_index "data_fields", ["data_collection_id"], name: "index_data_fields_on_data_collection_id"
+  add_index "data_fields", ["data_type_id"], name: "index_data_fields_on_data_type_id"
 
   create_table "data_types", force: true do |t|
     t.string   "name"
@@ -79,7 +95,7 @@ ActiveRecord::Schema.define(version: 20131009002459) do
     t.datetime "updated_at"
   end
 
-  add_index "provinces", ["country_id"], name: "index_provinces_on_country_id", using: :btree
+  add_index "provinces", ["country_id"], name: "index_provinces_on_country_id"
 
   create_table "roles", force: true do |t|
     t.string   "name"
@@ -105,8 +121,8 @@ ActiveRecord::Schema.define(version: 20131009002459) do
     t.datetime "updated_at"
   end
 
-  add_index "user_roles", ["role_id"], name: "index_user_roles_on_role_id", using: :btree
-  add_index "user_roles", ["user_id"], name: "index_user_roles_on_user_id", using: :btree
+  add_index "user_roles", ["role_id"], name: "index_user_roles_on_role_id"
+  add_index "user_roles", ["user_id"], name: "index_user_roles_on_user_id"
 
   create_table "user_statuses", force: true do |t|
     t.string   "name"
@@ -124,6 +140,6 @@ ActiveRecord::Schema.define(version: 20131009002459) do
     t.datetime "updated_at"
   end
 
-  add_index "users", ["user_status_id"], name: "index_users_on_user_status_id", using: :btree
+  add_index "users", ["user_status_id"], name: "index_users_on_user_status_id"
 
 end

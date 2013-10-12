@@ -1,19 +1,28 @@
-<div class="spacer tiles-list">
+<div class="spacer tiles-list centered-boxes">
     <div class="row spacer">
 		<h1 class="pull-left">Set de datos abiertos</h1>
-	<% if @is_admin %>
-		<a class="btn btn-large btn-primary pull-right boton-titulo" href="<%= new_data_collection_path %>">Nuevo</a>
-	<% end %>
+      <% if @is_admin %>
+        <a class="btn btn-large btn-primary pull-right boton-titulo" href="<%= new_data_collection_path %>">Nuevo</a>
+      <% end %>
+    </div>
+    <div class="row spacer filter">
+        <span class="filter-title">Categorias:</span>
+        <a class="category" href="?">Todas</a>
+      <% @categories.each do |category| %>
+	    <% if @sel_category == category.id.to_s %>
+            <span class="category"><%=category.name%></span>
+        <% else %>
+            <a class="category" href="?category=<%=category.id%>"><%=category.name%></a>
+        <% end %>
+      <% end %>
+
     </div>
 
 
-    <% @data_collections.each_slice(4).to_a.each do |sub_array| %>
+    <% @data_collections.each do |data_collection| %>
 
-      <div class="row">
 
-        <% sub_array.each do |data_collection| %>
-
-            <div class="box col-lg-3">
+            <div class="box">
                 <div class="content">
 		            <h2><%= data_collection.institution %></h2>
                     <a href="<%=api_call_path (data_collection.collection_name)%>"><h3><%= data_collection.name %></h3></a>
@@ -31,11 +40,8 @@
 	        <% end %>
                     </div>
                 </div>
-          </div>
+            </div>
 
-        <% end %>
-
-	  </div>
 
     <% end %>
 
