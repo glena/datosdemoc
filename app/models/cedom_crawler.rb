@@ -1,6 +1,7 @@
 #encoding: utf-8
 class CEDOMCrawler
   #http://www.cedom.gov.ar/es/busca/proyect/busproy.php?buscanio=2013&autorcod=cualquier
+  #es un asco, rehacer
 
   def self.get_pais
     Country.where(:name => 'Argentina').first
