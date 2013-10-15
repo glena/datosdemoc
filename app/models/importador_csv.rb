@@ -39,7 +39,6 @@ class ImportadorCSV
         first_row = false
       else
         hash = self.generar_hash headers, csv
-
         data.push hash
 
         if data.length == 1000
@@ -75,9 +74,8 @@ class ImportadorCSV
 
   def self.generar_hash headers, csv
     hash = {}
-    (1..(headers.length-1)).each do |index|
+    (0..(headers.length-1)).each do |index|
       hash[headers[index]] = csv[index]
-
     end
     hash
   end
