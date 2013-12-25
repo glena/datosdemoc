@@ -10,8 +10,11 @@ class MongoDataInserter
   end
 
   def add item
+
+    puts item
+
     @data.push item
-    if @data.length == 1000
+    if @data.length == 1
        self.insert
     end
   end

@@ -80,4 +80,14 @@ class ApiController < ApplicationController
     params[:current_menu_item] = :datos
   end
 
+  def viewer
+    name = params[:name]
+    @graph = GraphsFactory.instance.get name
+
+    self.render_404 if @graph.nil?
+
+    render @graph.get_template
+
+  end
+
 end

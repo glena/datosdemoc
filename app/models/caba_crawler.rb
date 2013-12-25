@@ -78,7 +78,7 @@ class CABACrawler
             puts "\t\tImportando CSV...\t"
 
             begin
-              ImportadorCSV.importar csv_url, nil, data_collection
+              ImportadorCSV.importar csv_url, nil, MongoDataInserter.new(data_collection)
               puts "\t\tImportacion finalizada\t"
             rescue
               data_collection.destroy

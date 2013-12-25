@@ -19,6 +19,7 @@ Datosdemocraticos::Application.routes.draw do
 
   get 'api/v1/:collection/pagina/:page' => 'api#call', as: :api_call_page
   get 'api/v1/:collection' => 'api#call', as: :api_call
+  get 'view/:name' => 'api#viewer', as: :api_viewer
 
   get 'datas/:id/importar-csv' => 'importador#form', as: :importador_csv
   post 'datas/:id/importar-csv' => 'importador#importar'

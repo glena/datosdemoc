@@ -50,7 +50,7 @@ class LNCrawler
 
     puts "inflacion real"
 
-    data_collection = DataCollection.where(:collection_name => "Inflación extraoficial mensual - inflacionverdadera.com").first
+    data_collection = DataCollection.where(:collection_name => "inflacion_mensual_inflacionverdadera_com").first
 
     if data_collection.nil?
 
@@ -77,13 +77,15 @@ class LNCrawler
       end
     end
 
-    begin
-      ImportadorCSV.importar "http://www.inflacionverdadera.com/download/inflacion-indices.xls", "\t", data_collection
+    #begin
+
+                              #ImportadorCSV.importar "https://globalmarkets.statestreet.com/Proxy/Public/csv/Argentina_monthly_series.csv", "\t", InflacionRealDataInserter.new(data_collection.collection_name), data_collection
+      ImportadorCSV.importar "http://www.inflacionverdadera.com/download/inflacion-indices.xls", "\t", InflacionRealDataInserter.new(data_collection.collection_name), data_collection
       puts "\t\tImportacion finalizada\t"
-    rescue
-      data_collection.destroy
-      puts "\t\tERROR -> ROLLBACK\t"
-    end
+    #rescue
+    #  data_collection.destroy
+    #  puts "\t\tERROR -> ROLLBACK\t"
+    #end
 
   end
   def self.importar_inflacion
@@ -131,9 +133,22 @@ class LNCrawler
           fecha = row.search("td[6]").first
 
           if not (variacion.empty? || fecha.empty?)
+
+            begin
+              fecha = DateTime.strptime(fecha.inner_html.strip, '%m/%d/%Y')
+            rescue
+              if fecha.inner_html.strip == '31/06/2013'
+                fecha = DateTime.strptime('30/06/2013', '%d/%m/%Y')
+              else
+                fecha = DateTime.strptime(fecha.inner_html.strip, '%d/%m/%Y')
+              end
+            end
+
+            fecha = fecha.strftime('%Y-%m')
+
             hash = {
-              'FECHA'=>fecha.inner_html.strip,
-              'VARIACION'=>variacion.inner_html.strip.to_f
+                'FECHA'=> fecha,
+                'VARIACION'=>variacion.inner_html.strip.to_f
             }
 
             institucion = row.search("td[3]").first.inner_html.strip

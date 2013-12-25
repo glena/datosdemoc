@@ -12,13 +12,9 @@ class ImportadorCSV
     separador
   end
 
-  def self.importar file_path, separador, data_collection
+  def self.importar file_path, separador, data_inserter, data_collection
 
     require 'csv'
-
-    mongo_collection = MongoConnection.instance.get_collection data_collection.collection_name
-
-    mongo_collection.drop
 
     data = []
 
@@ -39,20 +35,13 @@ class ImportadorCSV
         first_row = false
       else
         hash = self.generar_hash headers, csv
-        data.push hash
 
-        if data.length == 1000
-          mongo_collection.insert data
-          data.clear
-        end
+        data_inserter.add hash
       end
 
     end
 
-    if data.length > 0
-      mongo_collection.insert data
-      data.clear
-    end
+    data_inserter.insert
 
   end
 
@@ -74,8 +63,9 @@ class ImportadorCSV
 
   def self.generar_hash headers, csv
     hash = {}
+
     (0..(headers.length-1)).each do |index|
-      hash[headers[index]] = csv[index]
+      hash[headers[index].strip] = csv[index].strip
     end
     hash
   end

@@ -1,0 +1,30 @@
+<%= @graph.get_name  %>
+
+
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+	google.load("visualization", "1", {packages:["corechart"]});
+	google.setOnLoadCallback(drawChart);
+	function drawChart() {
+
+
+		var data = google.visualization.arrayToDataTable([
+				['Date','Indec', 'IPC Congreso', 'Alimentos y bebidas - Inflacion verdadera', 'Canasta basica - Inflacion verdadera']
+			<% @graph.get_data.each do |item| %>
+				,['<%=item[0]%>', <%=item[1]%>, <%=item[2]%>, <%=item[3]%>, <%=item[4]%>]
+			<% end %>
+		]);
+
+
+
+		var options = {
+			title: '<%= @graph.get_name  %>'
+		};
+
+		var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+		chart.draw(data, options);
+	}
+</script>
+
+<div id="chart_div" style="width: 900px; height: 500px;"></div>
+
