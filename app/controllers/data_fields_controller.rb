@@ -32,8 +32,12 @@ class DataFieldsController < ApplicationController
   # POST /data_fields
   # POST /data_fields.json
   def create
-    @data_field = DataField.new(data_field_params)
+    data = data_field_params
+    @data_field = DataField.new
     @data_field.data_collection_id = params[:data_collection_id]
+    @data_field.name = data.name
+    @data_field.is_filter = data.is_filter
+    @data_field.data_type_id = data.data_type_id
 
     respond_to do |format|
       if @data_field.save
@@ -49,8 +53,14 @@ class DataFieldsController < ApplicationController
   # PATCH/PUT /data_fields/1
   # PATCH/PUT /data_fields/1.json
   def update
+    data = data_field_params
+
+    @data_field.name = data[:name]
+    @data_field.is_filter = data[:is_filter]
+    @data_field.data_type_id = data[:data_type_id]
+
     respond_to do |format|
-      if @data_field.update(data_field_params)
+      if @data_field.save
         format.html { redirect_to data_collection_data_fields_path (@data_field.data_collection.id), notice: 'Data field was successfully updated.' }
         format.json { head :no_content }
       else

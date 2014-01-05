@@ -3,6 +3,8 @@ gem 'rails', '4.0.0'
 gem 'protected_attributes'
 group :development, :test do
   gem 'sqlite3'
+  gem 'ruby-debug-base19x'
+  gem 'ruby-debug-ide'
 end
 #group :production do
 #  gem 'mysql2'
@@ -22,3 +24,4 @@ gem "bson_ext"
 gem "uuidtools"
 gem "hpricot"
 gem 'spreadsheet'
+gem 'smarter_csv'

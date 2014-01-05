@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :set_session_status
-  before_action :track_view
+  #before_action :track_view
 
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.

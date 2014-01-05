@@ -23,10 +23,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ln_crawler.rb" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/models/ln_crawler.rb">
+      <file leaf-file-name="data_fields_controller.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/data_fields_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="52" column="120" selection-start="975" selection-end="975" vertical-scroll-proportion="0.060606062">
+            <state line="57" column="0" selection-start="1607" selection-end="1607" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="importador_controller.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/importador_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="8" selection-start="345" selection-end="345" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -35,52 +44,25 @@
       <file leaf-file-name="importador_csv.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/importador_csv.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="0" selection-start="597" selection-end="597" vertical-scroll-proportion="0.0">
+            <state line="6" column="0" selection-start="130" selection-end="130" vertical-scroll-proportion="-4.08">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/data_collections/index.html.erb">
+      <file leaf-file-name="data_field.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/data_field.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="19" selection-start="760" selection-end="760" vertical-scroll-proportion="-0.65384614">
+            <state line="12" column="39" selection-start="457" selection-end="457" vertical-scroll-proportion="-8.16">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="data_collections_controller.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/data_collections_controller.rb">
+      <file leaf-file-name="data_type.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/models/data_type.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="139" column="20" selection-start="4365" selection-end="4370" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mongo_data_inserter.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/helpers/mongo_data_inserter.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="19" selection-start="240" selection-end="240" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cedom_crawler.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/cedom_crawler.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="181" column="76" selection-start="4593" selection-end="4603" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="caba_crawler.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/caba_crawler.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="88" column="13" selection-start="1638" selection-end="2509" vertical-scroll-proportion="0.0">
+            <state line="18" column="0" selection-start="476" selection-end="476" vertical-scroll-proportion="0.54448396">
               <folding />
             </state>
           </provider>
@@ -96,22 +78,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/models/data_collection_category.rb" />
-        <option value="$PROJECT_DIR$/db/migrate/20131012021007_create_data_collection_categories.rb" />
-        <option value="$PROJECT_DIR$/app/models/data_collection.rb" />
-        <option value="$PROJECT_DIR$/app/views/data_collections/_form.html.erb" />
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/application.css" />
-        <option value="$PROJECT_DIR$/app/models/data_fixer.rb" />
-        <option value="$PROJECT_DIR$/app/models/user.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/data_collections_controller.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/analytics_controller.rb" />
-        <option value="$PROJECT_DIR$/app/views/analytics/stats.html.erb" />
-        <option value="$PROJECT_DIR$/Gemfile" />
-        <option value="$APPLICATION_HOME_DIR$/rubystubs193/kernel.rb" />
-        <option value="$PROJECT_DIR$/app/helpers/mongo_data_inserter.rb" />
-        <option value="$PROJECT_DIR$/app/views/data_collections/index.html.erb" />
-        <option value="$PROJECT_DIR$/app/models/importador_csv.rb" />
         <option value="$PROJECT_DIR$/app/models/ln_crawler.rb" />
+        <option value="$PROJECT_DIR$/Gemfile" />
+        <option value="$PROJECT_DIR$/app/controllers/application_controller.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/data_collections_controller.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/importador_controller.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/data_fields_controller.rb" />
+        <option value="$PROJECT_DIR$/app/models/data_type_manager_string.rb" />
+        <option value="$PROJECT_DIR$/app/models/data_type_manager_integer.rb" />
+        <option value="$PROJECT_DIR$/app/models/data_type_manager_decimal.rb" />
+        <option value="$PROJECT_DIR$/app/models/data_type_manager_bool.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/api_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/api/call.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/api/info.html.erb" />
+        <option value="$PROJECT_DIR$/app/models/importador_csv.rb" />
+        <option value="$PROJECT_DIR$/app/models/data_field.rb" />
+        <option value="$PROJECT_DIR$/app/models/data_type.rb" />
       </list>
     </option>
   </component>
@@ -204,22 +186,8 @@
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="datosdemocraticos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="datosdemoc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
+              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -237,7 +205,25 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="helpers" />
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="api" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="datosdemocraticos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="datosdemoc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -253,7 +239,7 @@
     <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="org.jetbrains.plugins.ruby.settings.RubyIdeSdkConfigurable" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../datosdemocraticos" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../habitues/habitues/Backend" />
     <property name="RailsGeneratorsPopup.hiddenIncluded" value="false" />
     <property name="GoToClass.includeJavaFiles" value="false" />
     <property name="options.splitter.details.proportions" value="0.2" />
@@ -539,11 +525,11 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="IRB console.Rails console: datosdemocraticos" />
-      <item index="1" class="java.lang.String" itemvalue="Rake.test" />
-      <item index="2" class="java.lang.String" itemvalue="Rake.spec" />
-      <item index="3" class="java.lang.String" itemvalue="Rails.Production: datosdemocraticos" />
-      <item index="4" class="java.lang.String" itemvalue="Rails.Development: datosdemocraticos" />
+      <item index="0" class="java.lang.String" itemvalue="Rake.test" />
+      <item index="1" class="java.lang.String" itemvalue="Rake.spec" />
+      <item index="2" class="java.lang.String" itemvalue="Rails.Production: datosdemocraticos" />
+      <item index="3" class="java.lang.String" itemvalue="Rails.Development: datosdemocraticos" />
+      <item index="4" class="java.lang.String" itemvalue="IRB console.Rails console: datosdemocraticos" />
     </list>
     <recent_temporary>
       <list size="1">
@@ -600,14 +586,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="1010" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32951945" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.67048055" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24959481" sideWeight="0.604119" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25769854" sideWeight="0.67048055" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32951945" sideWeight="0.49027553" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25769854" sideWeight="0.6716247" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32837528" sideWeight="0.49027553" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.395881" sideWeight="0.50405186" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32951945" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -675,96 +661,114 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://C:/Ruby193/lib/ruby/gems/1.9.1/gems/activerecord-4.0.0/lib/active_record/attribute_methods/read.rb">
+    <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="0" selection-start="2387" selection-end="2387" vertical-scroll-proportion="0.030303031" />
+        <state line="3" column="2" selection-start="118" selection-end="118" vertical-scroll-proportion="0.090747334">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/models/data_type_manager_string.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="118" column="0" selection-start="4409" selection-end="4409" vertical-scroll-proportion="0.8740741" />
+        <state line="2" column="2" selection-start="31" selection-end="59" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/analytics/stats.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/models/data_type_manager_integer.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="34" selection-start="61" selection-end="61" vertical-scroll-proportion="0.020656137" />
+        <state line="1" column="2" selection-start="31" selection-end="64" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/analytics_controller.rb">
+    <entry file="file://$PROJECT_DIR$/app/models/data_type_manager_decimal.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="4" selection-start="62" selection-end="69" vertical-scroll-proportion="0.080094226" />
+        <state line="1" column="2" selection-start="31" selection-end="64" vertical-scroll-proportion="0.03024911">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Gemfile">
+    <entry file="file://$PROJECT_DIR$/app/models/data_type_manager_bool.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="25" selection-start="451" selection-end="451" vertical-scroll-proportion="0.4605418" />
+        <state line="0" column="26" selection-start="25" selection-end="25" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/helpers/mongo_connection.rb">
+    <entry file="file://$PROJECT_DIR$/app/controllers/importador_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="21" selection-start="341" selection-end="356" vertical-scroll-proportion="0.0" />
+        <state line="17" column="8" selection-start="345" selection-end="345" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/api/info.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="78" column="6" selection-start="4035" selection-end="4035" vertical-scroll-proportion="0.93499047">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/api/call.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="66" column="6" selection-start="1982" selection-end="1982" vertical-scroll-proportion="0.9365672">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/api_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="4" selection-start="73" selection-end="164" vertical-scroll-proportion="0.15151516" />
+        <state line="72" column="117" selection-start="2064" selection-end="2064" vertical-scroll-proportion="0.8360656">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/data_collection.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="38" selection-start="143" selection-end="169" vertical-scroll-proportion="0.18181819" />
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/rubystubs193/kernel.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="402" column="8" selection-start="15740" selection-end="15740" vertical-scroll-proportion="0.3030303" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/helpers/mongo_data_inserter.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="19" selection-start="240" selection-end="240" vertical-scroll-proportion="0.0">
+        <state line="5" column="6" selection-start="113" selection-end="113" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/cedom_crawler.rb">
+    <entry file="file://$PROJECT_DIR$/app/controllers/data_fields_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="181" column="76" selection-start="4593" selection-end="4603" vertical-scroll-proportion="0.0">
+        <state line="57" column="0" selection-start="1607" selection-end="1607" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/caba_crawler.rb">
+    <entry file="file://C:/Ruby193/lib/ruby/gems/1.9.1/gems/activesupport-4.0.0/lib/active_support/dependencies.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="88" column="13" selection-start="1638" selection-end="2509" vertical-scroll-proportion="0.0">
+        <state line="181" column="0" selection-start="6938" selection-end="6938" vertical-scroll-proportion="0.33274022">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/data_collections/index.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/models/data_field.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="19" selection-start="760" selection-end="760" vertical-scroll-proportion="-0.65384614">
+        <state line="12" column="39" selection-start="457" selection-end="457" vertical-scroll-proportion="-8.16">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/data_collections_controller.rb">
+    <entry file="file://C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_controller/metal/rescue.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="139" column="20" selection-start="4365" selection-end="4370" vertical-scroll-proportion="0.0">
+        <state line="30" column="0" selection-start="1023" selection-end="1023" vertical-scroll-proportion="0.6672598">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/importador_csv.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="0" selection-start="597" selection-end="597" vertical-scroll-proportion="0.0">
+        <state line="6" column="0" selection-start="130" selection-end="130" vertical-scroll-proportion="-4.08">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/ln_crawler.rb">
+    <entry file="file://$PROJECT_DIR$/app/models/data_type.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="120" selection-start="975" selection-end="975" vertical-scroll-proportion="0.060606062">
+        <state line="18" column="0" selection-start="476" selection-end="476" vertical-scroll-proportion="0.54448396">
           <folding />
         </state>
       </provider>

@@ -15,12 +15,12 @@
 
   <h2>Especificación del API</h2>
 
-  <p>Todos los request se realizan a la siguiente URL <strong>http://datosdemocraticos.com.ar/api/v1/<em>nombre_de_la_colección</em></strong>.</p>
+  <p>Todos los request se realizan a la siguiente URL <strong>http://datosdemocraticos.com.ar/api/v1/<em>nombre_de_la_colección.json</em></strong>.</p>
   <p>El nombre de la colección se obtiene al ingresar a cualquiera de los <a href="<%= data_collections_path%>">set de datos</a> junto con el listado de campos del set y el tipo de datos de cada uno.</p>
-  <p>Para obtener los datos del set, simplemente se debe realizar un request con el método <strong>GET</strong> a la URL. En el caso de poseer el API Key, se debe agregar un parámetro GET con la misma, siendo la URL resultante: <strong>http://datosdemocraticos.com.ar/api/v1/nombre_de_la_colección?<em>apikey=###########################</em></strong>.</p>
-  <p>Cada request al API devuelve como máximo 100 registros. De esta forma, para acceder a la siguiente página de resultados es necesario agregar <strong>/pagina/##</strong>. De esta forma la URL resultante para acceder a la segunda página de datos es: <strong>http://datosdemocraticos.com.ar/api/v1/nombre_de_la_colección<em>/pagina/2</em>?apikey=###########################</strong></p>
+  <p>Para obtener los datos del set, simplemente se debe realizar un request con el método <strong>GET</strong> a la URL. En el caso de poseer el API Key, se debe agregar un parámetro GET con la misma, siendo la URL resultante: <strong>http://datosdemocraticos.com.ar/api/v1/nombre_de_la_colección.json?<em>apikey=###########################</em></strong>.</p>
+  <p>Cada request al API devuelve como máximo 100 registros. De esta forma, para acceder a la siguiente página de resultados es necesario agregar <strong>/pagina/##.json</strong>. De esta forma la URL resultante para acceder a la segunda página de datos es: <strong>http://datosdemocraticos.com.ar/api/v1/nombre_de_la_colección<em>/pagina/2.json</em>?apikey=###########################</strong></p>
 
-
+  <i><strong>Nota:</strong> Para consumir los servicios es necesario agregar la extensión <strong>.json</strong> a la url del dataset.</i>
 
   <h2>Respuesta del API</h2>
 
@@ -28,51 +28,51 @@
 
   <table class="table">
     <thead>
-        <tr>
-          <th>Parámetro</th>
-          <th>Explicación</th>
-        </tr>
+    <tr>
+      <th>Parámetro</th>
+      <th>Explicación</th>
+    </tr>
     </thead>
     <tbody>
-	    <tr>
-	      <td><strong>estado</strong></td>
-	      <td>String:
-	        <ul>
-	          <li><strong>ok</strong>: se devuelve el set de datos completo</li>
-	          <li><strong>warning</strong>: se alcanzó el límite diario, no se envió el parámetro apikey o el apikey no es válida.</li>
-	        </ul>
-	      </td>
-	    </tr>
+    <tr>
+      <td><strong>estado</strong></td>
+      <td>String:
+        <ul>
+          <li><strong>ok</strong>: se devuelve el set de datos completo</li>
+          <li><strong>warning</strong>: se alcanzó el límite diario, no se envió el parámetro apikey o el apikey no es válida.</li>
+        </ul>
+      </td>
+    </tr>
 
-	    <tr>
-	      <td><strong>mensaje</strong></td>
-	      <td>String:
-	        <ul>
-	          <li>Es un string vacío si el estado es <strong>ok</strong>.</li>
-	          <li>Especifica la razón en caso de que el estado sea <strong>warning</strong>.</li>
-	        </ul>
-	      </td>
-	    </tr>
+    <tr>
+      <td><strong>mensaje</strong></td>
+      <td>String:
+        <ul>
+          <li>Es un string vacío si el estado es <strong>ok</strong>.</li>
+          <li>Especifica la razón en caso de que el estado sea <strong>warning</strong>.</li>
+        </ul>
+      </td>
+    </tr>
 
-	    <tr>
-	      <td><strong>data</strong></td>
-	      <td>Array: Es un array de objetos correspondiente al set de datos.</td>
-	    </tr>
+    <tr>
+      <td><strong>data</strong></td>
+      <td>Array: Es un array de objetos correspondiente al set de datos.</td>
+    </tr>
 
-	    <tr>
-	      <td><strong>tiene_otra_pagina</strong></td>
-	      <td>Boolean:
-	        <ul>
-	          <li><strong>true</strong> en caso de haber devuelto solo una página de resultados y que la misma no sea la última.</li>
-	          <li><strong>false</strong> en caso de no haber más datos.</li>
-	        </ul>
-	      </td>
-	    </tr>
+    <tr>
+      <td><strong>tiene_otra_pagina</strong></td>
+      <td>Boolean:
+        <ul>
+          <li><strong>true</strong> en caso de haber devuelto solo una página de resultados y que la misma no sea la última.</li>
+          <li><strong>false</strong> en caso de no haber más datos.</li>
+        </ul>
+      </td>
+    </tr>
 
-	    <tr>
-	      <td><strong>conteo_total</strong></td>
-	      <td>Integer: la cantidad total de datos.</td>
-	    </tr>
+    <tr>
+      <td><strong>conteo_total</strong></td>
+      <td>Integer: la cantidad total de datos.</td>
+    </tr>
     </tbody>
   </table>
 

@@ -71,12 +71,28 @@ class DataCollectionsController < ApplicationController
   # POST /data_collections
   # POST /data_collections.json
   def create
-    @data_collection = DataCollection.new(data_collection_params)
+    @data_collection = DataCollection.new
+    @data_collection.name = params[:data_collection][:name]
+    @data_collection.description = params[:data_collection][:description]
+    @data_collection.institution = params[:data_collection][:institution]
+    @data_collection.collection_name = params[:data_collection][:collection_name]
+    @data_collection.country_id = params[:data_collection][:country_id]
+    @data_collection.province_id = params[:data_collection][:province_id]
+    @data_collection.city_id = params[:data_collection][:city_id]
+
+    params[:categories].each do |category|
+
+      collection_category = DataCollectionCategory.new
+      collection_category.data_collection = @data_collection
+      collection_category.category_id = category
+      collection_category.save
+
+    end
 
     respond_to do |format|
       if @data_collection.save
         format.html { redirect_to importador_csv_path (@data_collection.id), notice: 'Data collection was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @data_collection }
+        format.json { render action: 'show', status: :created, location: @data_collection, params:data_collection_params }
       else
         format.html { render action: 'new' }
         format.json { render json: @data_collection.errors, status: :unprocessable_entity }
@@ -109,6 +125,7 @@ class DataCollectionsController < ApplicationController
       end
     end
   end
+
 
   # DELETE /data_collections/1
   # DELETE /data_collections/1.json

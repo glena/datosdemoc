@@ -70,7 +70,7 @@ class ApiController < ApplicationController
 
     respond_to do |format|
         format.html { }
-        format.json { render json: { :estado => status, :mensaje => @message, :data => @data, :conteo_total => count, :tiene_otra_pagina => @has_next_page} }
+        format.json { render json: { :estado => status, :mensaje => @message, :data => @data.as_json(except: ['_id']), :conteo_total => count, :tiene_otra_pagina => @has_next_page} }
     end
   end
 
