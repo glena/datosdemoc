@@ -6,11 +6,28 @@
     <%= label :apikey, 'Api Key:' %>
     <%= text_field_tag(:apikey,@user.apikey, :class => "form-control", :readonly => '1') %>
   </div>
+
+  <div class="spacer"></div>
+  <div class="spacer"></div>
+
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Uso del API</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    <% @usage.each do |field| %>
+        <tr>
+          <td><%= field.day.strftime('%d/%m/%Y') %> - #<%= field.calls %> calls</td>
+        </tr>
+    <% end %>
+
+    </tbody>
+
+  </table>
 </div>
-<div class="spacer"></div>
-<div class="spacer"></div>
-<div class="spacer"></div>
-<div class="spacer"></div>
-<div class="spacer"></div>
+
 <div class="spacer"></div>
 <div class="spacer"></div>
