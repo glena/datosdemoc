@@ -15,7 +15,9 @@ class ImportadorController < ApplicationController
     params[:page_title] = 'Importar datos - Datos Democráticos'
 
     uploaded_file = params[:csv]
-    ImportadorCSV.importar uploaded_file.path, params[:importacion][:separador], MongoDataInserter.new(@data_collection.collection_name), @data_collection
+    inserter = MongoDataInserter.new(@data_collection.collection_name)
+    inserter.clear
+    ImportadorCSV.importar uploaded_file.path, params[:importacion][:separador], inserter, @data_collection
 
     flash[:notice] = "Dataset importado satisfactoriamente."
     redirect_to data_collections_path
