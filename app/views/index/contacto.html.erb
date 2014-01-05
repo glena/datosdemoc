@@ -1,0 +1,46 @@
+<div class="spacer"></div>
+<div class="form-wrapper">
+  <h1>¡Contactate con nosotros!</h1>
+  <%= form_tag contacto_path, :method => "post" do %>
+
+      <div class="form-group">
+        <%= label :email, 'Email:' %>
+        <%= email_field_tag(:email,'', :class => "form-control", :required => '1') %>
+      </div>
+
+      <div class="form-group">
+        <%= label :nombre, 'Nombre:' %>
+        <%= text_field_tag(:nombre,'', :class => "form-control", :required => '1') %>
+      </div>
+
+      <div class="form-group">
+        <%= label :mensaje, 'Mensaje:' %>
+        <%= text_area_tag(:mensaje,'', :class => "form-control", :required => '1') %>
+      </div>
+
+
+      <div class="actions">
+        <%= submit_tag 'Enviar', :class => "btn btn-large btn-primary"%>
+      </div>
+  <% end %>
+</div>
+<div class="spacer"></div>
+<div class="spacer"></div>
+<div class="boxes-first-row">
+	<div class="row">
+	  <div class="box col-lg-4">
+	    <a href="http://twitter.com/datosdemoc"><img width="150" height="150" class="img-circle" src="/assets/twitter-150.png" alt="Twitter"></a>
+	    <a href="http://twitter.com/datosdemoc"><h2>Seguinos en Twitter @datosdemoc</h2></a>
+	  </div>
+	  <div class="box col-lg-4">
+	    <a href="http://facebook.com/datosdemoc"><img width="150" height="150" class="img-circle" src="/assets/facebook-150.png" alt="Facebook"></a>
+	    <a href="http://facebook.com/datosdemoc"><h2>Seguinos en facebook</h2></a>
+	  </div>
+	  <div class="box col-lg-4">
+	    <a href="/blog"><img width="150" height="150" class="img-circle" src="/assets/blog-150.png" alt="Blog"></a>
+	    <a href="/blog"><h2>Blog</h2></a>
+	  </div>
+	</div>
+</div>
+<div class="spacer"></div>
+<div class="spacer"></div>

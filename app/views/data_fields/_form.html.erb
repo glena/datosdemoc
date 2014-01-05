@@ -1,0 +1,37 @@
+<div class="form-wrapper">
+<%= form_for([@data_collection, @data_field], :url => @url,  html: { role: 'form' } ) do |f| %>
+	<% if @data_field.errors.any? %>
+        <div class="alert alert-danger">
+			<h2><%= pluralize(@data_field.errors.count, "error") %> prohibited this data_field from being saved:</h2>
+
+			<ul>
+			<% @data_field.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
+			<% end %>
+			</ul>
+		</div>
+	<% end %>
+
+
+	<div class="form-group">
+		<%= f.label(:name) %>
+		<%= f.text_field(:name, :class => "form-control") %>
+	</div>
+	<div class="form-group">
+		<%= f.label(:is_filter) %>
+		<%= f.check_box(:is_filter) %>
+	</div>
+	<div class="form-group">
+		<%= f.label(:data_type) %>
+		<%= f.collection_select :data_type_id, DataType.all,:id,:name, {include_blank: true}, :class => "form-control" %>
+	</div>
+
+
+	<div class="actions">
+		<%= f.submit 'Enviar', :class => "btn btn-large btn-primary"%>
+	    <%= link_to 'Cancelar', data_collection_data_fields_path(@data_collection) %>
+	</div>
+<% end %>
+</div>
+<div class="spacer"></div>
+<div class="spacer"></div>

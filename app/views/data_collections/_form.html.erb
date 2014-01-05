@@ -1,0 +1,122 @@
+
+<div class="form-wrapper">
+<%
+   province_id = nil
+   country_id = nil
+
+   province_id = @data_collection.province.id if (not @data_collection.nil?) && (not @data_collection.province.nil?)
+   country_id = @data_collection.country.id if (not @data_collection.nil?) && (not @data_collection.country.nil?)
+%>
+
+<%= form_for(@data_collection ,  html: { role: 'form' }) do |f| %>
+	<% if @data_collection.errors.any? %>
+        <div class="alert alert-danger">
+			<h2><%= pluralize(@data_collection.errors.count, "error") %> prohibited this data_collection from being saved:</h2>
+
+			<ul>
+			<% @data_collection.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
+			<% end %>
+			</ul>
+		</div>
+	<% end %>
+
+	<div class="form-group">
+		<%= f.label(:name) %>
+		<%= f.text_field(:name, :class => "form-control") %>
+	</div>
+
+
+	<div class="form-group">
+		<%= f.label(:description) %>
+		<%= f.text_area(:description, :class => "form-control") %>
+	</div>
+
+
+	<div class="form-group">
+		<%= f.label(:institution) %>
+		<%= f.text_field(:institution, :class => "form-control") %>
+	</div>
+
+
+	<div class="form-group">
+		<%= f.label(:collection_name) %>
+		<%= f.text_field(:collection_name, :class => "form-control") %>
+	</div>
+
+
+	<div class="form-group">
+		<%= f.label(:country_id) %>
+		<%= f.collection_select :country_id, Country.all,:id,:name, {include_blank: true}, { :class => 'country_select form-control' } %>
+	</div>
+
+
+	<div class="form-group">
+		<%= f.label(:province_id) %>
+		<%= f.collection_select :province_id, Province.where(:country_id => country_id),:id,:name, {include_blank: true}, { :class => 'province_select form-control' } %>
+	</div>
+
+
+	<div class="form-group">
+		<%= f.label(:city_id) %>
+		<%= f.collection_select :city_id, City.where(:province_id => province_id),:id,:name, {include_blank: true}, { :class => 'city_select form-control' } %>
+	</div>
+
+	<div class="form-group">
+	  <%= label_tag :categories %>
+	  <% @categories.each do |category| %>
+	    <div>
+	      <%= check_box_tag 'categories[]', category.id, (not @selected_categories.index(category.id).nil?) %> <%= category.name %>
+	    </div>
+	  <% end %>
+
+	</div>
+
+	<div class="actions">
+	  <%= f.submit 'Enviar', :class => "btn btn-large btn-primary"%>
+	  <%= link_to 'Cancelar', data_collections_path %>
+	</div>
+<% end %>
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+	$('.country_select').change(function(){
+		var list = $('.province_select');
+		list.find('option').remove();
+		list.append(new Option("Cargando...", ""));
+		$.ajax({
+			url:'/params/provinces.json',
+			data:{country_id:$(this).val()},
+			dataType: 'json',
+			success: function(r) {
+				list.find('option').remove();
+				list.append(new Option("", ""));
+				$.each(r, function(index, item) {
+					list.append(new Option(item.name, item.id));
+				});
+			}
+		});
+	});
+	$('.province_select').change(function(){
+		var list = $('.city_select');
+		list.find('option').remove();
+		list.append(new Option("Cargando...", ""));
+		$.ajax({
+			url:'/params/provinces.json',
+			data:{province_id:$(this).val()},
+			dataType: 'json',
+			success: function(r) {
+				list.find('option').remove();
+				list.append(new Option("", ""));
+				$.each(r, function(index, item) {
+					list.append(new Option(item.name, item.id));
+				});
+			}
+		});
+	});
+});
+</script>
+</div>
+<div class="spacer"></div>
+<div class="spacer"></div>
