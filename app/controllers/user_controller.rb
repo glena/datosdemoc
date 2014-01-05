@@ -187,5 +187,6 @@ class UserController < ApplicationController
       params[:page_title] = 'Mi cuenta - Datos Democráticos'
       @user = self.get_logged_user
       params[:current_menu_item] = :micuenta
+      @usage = ApiUse.where(:user => @user).last(20)
   end
 end
