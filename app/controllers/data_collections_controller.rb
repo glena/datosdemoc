@@ -104,7 +104,16 @@ class DataCollectionsController < ApplicationController
   # PATCH/PUT /data_collections/1.json
   def update
     respond_to do |format|
-      if @data_collection.update(data_collection_params)
+
+      @data_collection.name = params[:data_collection][:name]
+      @data_collection.description = params[:data_collection][:description]
+      @data_collection.institution = params[:data_collection][:institution]
+      @data_collection.collection_name = params[:data_collection][:collection_name]
+      @data_collection.country_id = params[:data_collection][:country_id]
+      @data_collection.province_id = params[:data_collection][:province_id]
+      @data_collection.city_id = params[:data_collection][:city_id]
+
+      if @data_collection.save
 
         @data_collection.data_collection_categories.map {|el| el.destroy}
 

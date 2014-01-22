@@ -6,6 +6,11 @@ class ImportadorCSV
 
     types = DataField.get_types_hash data_collection
 
+    types = {}
+    data_collection.fields.each do |field|
+      types[field.name] = field.manager
+    end
+
     SmarterCSV.process(file_path, {:col_sep => separador}) do |row|
 
       hash = row.first

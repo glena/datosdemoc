@@ -16,9 +16,14 @@ class User < ActiveRecord::Base
     self.has_role? admin.id
   end
 
+  def is_editor?
+    role = Role.get_editor
+    self.has_role? role.id
+  end
+
   def has_role? role_id
-    roles = self.user_roles.map {|r| r.id}
-    (not roles.index(role_id).nil?)
+    roles = self.user_roles.map {|r| r.role_id}
+    (roles.include? role_id)
   end
 
 

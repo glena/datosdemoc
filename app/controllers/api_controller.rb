@@ -13,24 +13,24 @@ class ApiController < ApplicationController
     status = 'ok'
     @message = ''
     @full = false
-    user = nil
+    @user = nil
 
     if params.has_key? :apikey
       @apikey = params[:apikey]
-      user = User.where(:apikey => @apikey).first
-      if user.nil?
+      @user = @user.where(:apikey => @apikey).first
+      if @user.nil?
         @message = 'El API Key no es válido, solo puede acceder al set de prueba limitado a 5 registros.'
         @apikey = nil
       else
         @message = 'Límite diario alcanzado, solo puede acceder al set de prueba limitado a 5 registros.'
       end
     else
-      user = self.get_logged_user
-      @apikey = user.apikey if not user.nil?
+      @user = self.get_logged_user
+      @apikey = @user.apikey if not @user.nil?
     end
 
     if not @apikey.nil?
-      if ApiUse.can_use user
+      if ApiUse.can_use @user
 
         pagesize = 100
         @page = 1
@@ -69,9 +69,15 @@ class ApiController < ApplicationController
     end
 
     respond_to do |format|
-        format.html { }
+        format.html {
+          
+        }
         format.json { render json: { :estado => status, :mensaje => @message, :data => @data.as_json(except: ['_id']), :conteo_total => count, :tiene_otra_pagina => @has_next_page} }
     end
+  end
+
+  def edit
+
   end
 
   def info

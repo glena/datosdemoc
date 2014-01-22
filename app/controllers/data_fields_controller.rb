@@ -35,9 +35,9 @@ class DataFieldsController < ApplicationController
     data = data_field_params
     @data_field = DataField.new
     @data_field.data_collection_id = params[:data_collection_id]
-    @data_field.name = data.name
-    @data_field.is_filter = data.is_filter
-    @data_field.data_type_id = data.data_type_id
+    @data_field.is_filter = data[:is_filter]
+    @data_field.name = data[:name]
+    @data_field.data_type_id = data[:data_type_id]
 
     respond_to do |format|
       if @data_field.save

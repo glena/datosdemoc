@@ -1,7 +1,10 @@
 <div class="spacer centered">
   <h1><%= @data_collection.name%></h1>
-  <h2><%= @data_collection.institution%> - <%= @data_collection.name%></h2>
+  <h2><%= @data_collection.institution%></h2>
   <p><%= @data_collection.description %></p>
+
+
+
 
   <p>
     <% if not @data_collection.country.nil? %>
@@ -26,6 +29,9 @@
   </ul>
   <hr/>
   <h3>Dataset <% if not @full %><span id="demo-text" title="<%= @message %>">Demo</span><% end %></h3>
+  <% if @user.is_editor? %>
+      <a class="btn btn-large btn-primary pull-right boton-titulo" href="<%= edit_data_path(@data_collection.collection_name) %>">Nuevo</a>
+  <% end %>
   <script type="text/javascript">
 	  $(document).ready(function(){
 		  $('#demo-text').tooltip();

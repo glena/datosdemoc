@@ -25,3 +25,4 @@ gem "uuidtools"
 gem "hpricot"
 gem 'spreadsheet'
 gem 'smarter_csv'
+gem 'rest-client'

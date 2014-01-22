@@ -4,6 +4,10 @@ class DataType < ActiveRecord::Base
     where(:name => :String).first
   end
 
+  def manager
+     DataType.get_manager self
+  end
+
   def self.get_manager type
     managers = {
       'Integer' => DataTypeManagerInteger,
