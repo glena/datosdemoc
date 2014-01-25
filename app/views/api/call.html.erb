@@ -29,6 +29,7 @@
   </ul>
   <hr/>
   <h3>Dataset <% if not @full %><span id="demo-text" title="<%= @message %>">Demo</span><% end %></h3>
+  <p>Total: <%= @count %> resultados</p>
   <% if @user.is_editor? %>
       <a class="btn btn-large btn-primary pull-right boton-titulo" href="<%= edit_data_path(@data_collection.collection_name) %>">Nuevo</a>
   <% end %>
@@ -37,37 +38,45 @@
 		  $('#demo-text').tooltip();
 	  });
   </script>
+</div>
+<div class="spacer">
+	<table class="table">
+		<thead>
+			<tr>
+			  <% @data_collection.data_fields.each do |field| %>
+			      <th><%= field.name %></th>
+			  <% end %>
+			</tr>
+		</thead>
+		<tbody>
 
-  <table class="table">
-    <thead>
-    <tr>
-      <% @data_collection.data_fields.each do |field| %>
-          <th><%= field.name %></th>
-      <% end %>
-    </tr>
-    </thead>
-    <tbody>
+		<% @data.each do |item| %>
+		    <tr>
+		      <% @data_collection.data_fields.each do |field| %>
+		          <td><%= item[field.name] %></td>
+		      <% end %>
+		    </tr>
+		<% end %>
 
-    <% @data.each do |item| %>
-        <tr>
-          <% @data_collection.data_fields.each do |field| %>
-              <td><%= item[field.name] %></td>
-          <% end %>
-        </tr>
-    <% end %>
+		</tbody>
 
-    </tbody>
+	</table>
 
-  </table>
+	<div class="row text-centered">
+	  <span class="pager page-number">Página <strong><%= @page %></strong> de <strong><%= @pages %></strong></span>
 
-  <div>
+	  <% if @page > 1 %>
+	      <a class="pull-left pager previous" href="<%= api_call_page_path(@data_collection.collection_name, @page -1) %>?apikey=<%= @apikey %>">Anterior</a>
+	  <% else %>
+	      <span class="pull-left pager previous">&nbsp;</span>
+	  <% end %>
 
-    <% if @page > 1 %>
-        <a class="pull-left" href="<%= api_call_page_path(@data_collection.collection_name, @page -1) %>?apikey=<%= @apikey %>">Anterior</a>
-    <% end %>
-    <% if @has_next_page %>
-        <a class="pull-right" href="<%= api_call_page_path(@data_collection.collection_name, @page +1) %>?apikey=<%= @apikey %>">Siguiente</a>
-    <% end %>
+	  <% if @has_next_page %>
+	      <a class="pull-right pager next" href="<%=api_call_page_path(@data_collection.collection_name, @page +1) %>?apikey=<%= @apikey %>">Siguiente</a>
+	  <% else %>
+	      <span class="pull-right pager next">&nbsp;</span>
+	  <% end %>
 
-  </div>
+
+	</div>
 </div>

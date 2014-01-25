@@ -16,7 +16,7 @@ class DataCollectionsController < ApplicationController
     @sel_category = params[:category]
 
     @page = (params.has_key?(:page) ? params[:page].to_i : 0)
-    limit = 16
+    limit = 10
 
     @data_collections = DataCollection.all
     if not @sel_category.nil?

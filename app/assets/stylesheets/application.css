@@ -107,39 +107,33 @@ footer p {
     padding: 20px;
 }
 
+.text-centered,
 .tiles-list.centered-boxes {
     text-align: center;
 }
 
 .tiles-list .box {
-    padding: 5px;
-    width: 280px;
-    margin: auto;
+    padding: 15px;
     text-align: left;
-    display: inline-block;
+    border-bottom: 1px solid #CCCCCC;
+    width: 80%;
+    margin: auto;
 }
-.tiles-list .box .content {
-    background-color: #EEEEEE;
-    box-shadow: 0 0 5px #DDDDDD;
-    padding:10px;
-}
-.tiles-list .box .content h2 {
+.tiles-list .box h2 {
     font-size: 12px;
     font-weight: bold;
     margin: 0 0 5px 0;
 }
-.tiles-list .box .content h3{
+.tiles-list .box h3{
     font-size: 15px;
-    margin: 0 0 5px 0;
+    margin: 0;
     font-weight: bold;
     display: inline-block;
-    height: 35px;
     line-height: 18px;
 }
-.tiles-list .box .content p{
+.tiles-list .box p{
     display: inline-block;
     margin: 10px 0;
-    height: 80px;
     font-size: 13px;
 }
 
@@ -185,9 +179,9 @@ h2 {
 
 .pager {
     display: inline-block;
-    padding: 0 50px;
+    padding: 0 25px;
     line-height: 50px;
-    font-size: 20px;
+    font-size: 16px;
     margin: 15px;
 }
 
@@ -196,11 +190,31 @@ h2 {
 }
 .pager.next ,
 .pager.previous {
-    width: 200px;
+    width: 130px;
 }
 a.pager.next {
     background: transparent url('/assets/next.png') no-repeat center right;
+    text-align: right;
 }
 a.pager.previous {
     background: transparent url('/assets/previous.png') no-repeat center left;
+    text-align: left;
+}
+
+.nosotros {
+    overflow: hidden;
+}
+
+.nosotros .persona {
+    text-align:center;
+    width:49%;
+    margin:auto;
+    float:left;
+}
+
+.nosotros .persona img{
+    box-shadow: 0 0 10px #999999;
+    border-radius: 50%;
+    width:100px;
+    height:100px;
 }

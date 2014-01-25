@@ -79,9 +79,10 @@ class ApiController < ApplicationController
     end
 
 
-    count = mongo_collection.count
+    @count = mongo_collection.count
+    @pages = (@count.to_f / pagesize.to_f).ceil
 
-    if (count > @page * pagesize) && (not @apikey.nil?)
+    if (@count > @page * pagesize) && (not @apikey.nil?)
       @has_next_page = true
     end
 
@@ -89,7 +90,7 @@ class ApiController < ApplicationController
         format.html {
           
         }
-        format.json { render json: { :estado => status, :mensaje => @message, :data => @data.as_json(except: ['_id']), :conteo_total => count, :tiene_otra_pagina => @has_next_page} }
+        format.json { render json: { :estado => status, :mensaje => @message, :data => @data.as_json(except: ['_id']), :conteo_total => @count, :tiene_otra_pagina => @has_next_page} }
     end
   end
 

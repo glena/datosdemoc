@@ -22,25 +22,21 @@
     <% @data_collections.each do |data_collection| %>
 
 
-            <div class="box">
-                <div class="content">
-		            <h2><%= data_collection.institution %></h2>
-                    <a href="<%=api_call_path (data_collection.collection_name)%>"><h3><%= data_collection.name %></h3></a>
-                    <p><%= data_collection.description_short %></p>
-                    <div>
+		<div class="box">
+			<h2><%= data_collection.institution %></h2>
+			<div><a href="<%=api_call_path (data_collection.collection_name)%>"><h3><%= data_collection.name %></h3></a></div>
+			<p><%= data_collection.description_short %></p>
 
-            <% if @is_admin %>
-
-                        <a href="<%=importador_csv_path (data_collection.id)%>">Importar</a>
-	                    <a href="<%=data_collection_data_fields_path (data_collection.id)%>">Fields</a>
-	                    <%= link_to 'Clonar', clonar_coleccion_path(data_collection.id) %>
-	                    <%= link_to 'Edit', edit_data_collection_path(data_collection) %>
-		                <%= link_to 'Destroy', data_collection, method: :delete, data: { confirm: 'Are you sure?' } %>
-
-	        <% end %>
-                    </div>
-                </div>
-            </div>
+			<% if @is_admin %>
+			<div>
+				<a href="<%=importador_csv_path (data_collection.id)%>">Importar</a>
+				<a href="<%=data_collection_data_fields_path (data_collection.id)%>">Fields</a>
+				<%= link_to 'Clonar', clonar_coleccion_path(data_collection.id) %>
+				<%= link_to 'Edit', edit_data_collection_path(data_collection) %>
+				<%= link_to 'Destroy', data_collection, method: :delete, data: { confirm: 'Are you sure?' } %>
+			</div>
+			<% end %>
+		</div>
 
 
     <% end %>
