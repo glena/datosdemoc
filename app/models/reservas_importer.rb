@@ -28,6 +28,7 @@ class ReservasImporter
     }
 
     mongo_collection = MongoConnection.instance.get_collection 'reservas_internacionales_bcra'
+    mongo_collection.drop
 
     request = RestClient.post  "http://www.bcra.gov.ar/estadis/es010100.asp", params
     datos = Hpricot request
@@ -40,6 +41,9 @@ class ReservasImporter
         celdas = row.search("td")
         fecha = celdas.first.inner_html
         monto = celdas.last.inner_html.to_i
+
+        o_fecha = Date.strptime(fecha, "%d/%m/%Y")
+        fecha = o_fecha.strftime("%Y-%m-%d")
 
         mongo_collection.update(
             {'fecha'=>fecha},

@@ -17,7 +17,7 @@ class ApiController < ApplicationController
 
     if params.has_key? :apikey
       @apikey = params[:apikey]
-      @user = @user.where(:apikey => @apikey).first
+      @user = User.where(:apikey => @apikey).first
       if @user.nil?
         @message = 'El API Key no es válido, solo puede acceder al set de prueba limitado a 5 registros.'
         @apikey = nil
@@ -60,7 +60,24 @@ class ApiController < ApplicationController
     params[:page_description] = @data_collection.description
 
     mongo_collection = MongoConnection.instance.get_collection @data_collection.collection_name
-    @data = mongo_collection.find.limit(pagesize).skip((@page-1) * pagesize)
+
+    key_field = @data_collection.data_fields.where(:is_key => true).first
+    if key_field
+
+      sense = 1
+
+      if params[:reverse]
+        sense = -1
+      end
+
+      sort = {
+          key_field.name => sense
+      }
+      @data = mongo_collection.find.sort( sort ).limit(pagesize).skip((@page-1) * pagesize)
+    else
+      @data = mongo_collection.find.limit(pagesize).skip((@page-1) * pagesize)
+    end
+
 
     count = mongo_collection.count
 
@@ -77,7 +94,39 @@ class ApiController < ApplicationController
   end
 
   def edit
+    @data_collection = DataCollection.where(:collection_name => params[:collection]).first
+  end
 
+  def update
+    @data_collection = DataCollection.where(:collection_name => params[:collection]).first
+    fields = @data_collection.data_fields
+    key = @data_collection.data_fields.where(:is_key => true).first
+
+    mongo_collection = MongoConnection.instance.get_collection @data_collection.collection_name
+
+    values = {}
+    fields.each do |field|
+      values[field.name] = field.data_type.manager.format params[field.name]
+    end
+
+    if key
+      key_name = key.name
+      key_value = key.data_type.manager.format params[key_name]
+
+      mongo_collection.update(
+          {key_name=>key_value},
+          values,
+          { upsert: true }
+      )
+    else
+      mongo_collection.insert values
+    end
+
+
+
+
+
+    redirect_to api_call_path (@data_collection.collection_name), notice: 'Los datos fueron actualizados.'
   end
 
   def info

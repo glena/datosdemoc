@@ -1,10 +1,8 @@
-class DataTypeManagerString
-
+class DataTypeManagerDate
   def format str
     str
   end
   def input_type
-    'text'
+    'date'
   end
-
 end

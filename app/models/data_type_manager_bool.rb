@@ -4,4 +4,7 @@ class DataTypeManagerBool
     return true if str == 'true' || str == 't' || str == '1'
     return false
   end
+  def input_type
+    'checkbox'
+  end
 end

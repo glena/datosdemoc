@@ -13,7 +13,7 @@
   <tbody>
     <% @data_fields.each do |data_field| %>
       <tr>
-        <td><%= data_field.name %> - <%= data_field.data_type.name %></td>
+        <td><%= data_field.name %> - <%= data_field.data_type.name %><%= data_field.is_key ? ' [KEY]' : '' %></td>
         <td><%= link_to 'Show', data_collection_data_field_path(data_field.data_collection, data_field) %></td>
         <td><%= link_to 'Edit', edit_data_collection_data_field_path(data_field.data_collection, data_field) %></td>
         <td><%= link_to 'Destroy', data_collection_data_field_path(data_field.data_collection, data_field), method: :delete, data: { confirm: 'Are you sure?' } %></td>

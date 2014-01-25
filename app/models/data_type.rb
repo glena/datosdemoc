@@ -13,11 +13,11 @@ class DataType < ActiveRecord::Base
       'Integer' => DataTypeManagerInteger,
       'Decimal' => DataTypeManagerDecimal,
       'String' => DataTypeManagerString,
-      'TimeStamp' => DataTypeManagerString,
-      'Date' => DataTypeManagerString,
+      'TimeStamp' => DataTypeManagerDateTime,
+      'Date' => DataTypeManagerDate,
       'Bool' => DataTypeManagerBool,
       'Json' => DataTypeManagerString,
-      'Hora' => DataTypeManagerString
+      'Hora' => DataTypeManagerTime
     }
 
     managers[type.name].new

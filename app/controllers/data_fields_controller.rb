@@ -32,10 +32,14 @@ class DataFieldsController < ApplicationController
   # POST /data_fields
   # POST /data_fields.json
   def create
+
+    DataField.update_all({:is_key => false}, {:data_collection_id => params[:data_collection_id]})
+
     data = data_field_params
     @data_field = DataField.new
     @data_field.data_collection_id = params[:data_collection_id]
     @data_field.is_filter = data[:is_filter]
+    @data_field.is_key = data[:is_key]
     @data_field.name = data[:name]
     @data_field.data_type_id = data[:data_type_id]
 
@@ -55,8 +59,11 @@ class DataFieldsController < ApplicationController
   def update
     data = data_field_params
 
+    DataField.update_all({:is_key => false}, {:data_collection_id => @data_field.data_collection_id})
+
     @data_field.name = data[:name]
     @data_field.is_filter = data[:is_filter]
+    @data_field.is_key = data[:is_key]
     @data_field.data_type_id = data[:data_type_id]
 
     respond_to do |format|
@@ -92,7 +99,7 @@ class DataFieldsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def data_field_params
-      allow = [:name,:is_filter,:data_type_id,:data_collection_id]
+      allow = [:name,:is_filter,:is_key,:data_type_id,:data_collection_id]
       params.require(:data_field).permit(allow)
     end
 

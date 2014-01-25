@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140119132535) do
+ActiveRecord::Schema.define(version: 20140125020702) do
 
   create_table "api_uses", force: true do |t|
     t.integer  "user_id"
@@ -77,6 +77,7 @@ ActiveRecord::Schema.define(version: 20140119132535) do
     t.integer  "data_type_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "is_key"
   end
 
   add_index "data_fields", ["data_collection_id"], name: "index_data_fields_on_data_collection_id"
