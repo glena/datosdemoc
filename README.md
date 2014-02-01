@@ -30,3 +30,8 @@ Próximos pasos
 - [ ] Implementar cache "Dalli & Cache Digests" de RoR4 (memcached)
 - [ ] Implementar filtros sobre los campos de los datasets para consumirse desde el API
 - [ ] Implementar una interfaz más "amigable" para acceder los datos desde la WEB
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/glena/datosdemoc/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
+[![Analytics](https://ga-beacon.appspot.com/UA-32429094-1/glena/datosdemoc)](https://github.com/glena/datosdemoc)

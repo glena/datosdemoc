@@ -28,7 +28,6 @@ class ReservasImporter
     }
 
     mongo_collection = MongoConnection.instance.get_collection 'reservas_internacionales_bcra'
-    mongo_collection.drop
 
     request = RestClient.post  "http://www.bcra.gov.ar/estadis/es010100.asp", params
     datos = Hpricot request

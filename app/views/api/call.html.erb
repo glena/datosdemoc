@@ -30,7 +30,7 @@
   <hr/>
   <h3>Dataset <% if not @full %><span id="demo-text" title="<%= @message %>">Demo</span><% end %></h3>
   <p>Total: <%= @count %> resultados</p>
-  <% if @user.is_editor? %>
+  <% if @user && @user.is_editor? %>
       <a class="btn btn-large btn-primary pull-right boton-titulo" href="<%= edit_data_path(@data_collection.collection_name) %>">Nuevo</a>
   <% end %>
   <script type="text/javascript">
