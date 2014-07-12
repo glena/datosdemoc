@@ -32,4 +32,4 @@ Próximos pasos
 - [ ] Implementar una interfaz más "amigable" para acceder los datos desde la WEB
 
 
-[![Analytics](https://ga-beacon.appspot.com/UA-51467836-1/glena/datosdemoc)](https://germanlena.com.ar)
+[![Analytics](https://ga-beacon.appspot.com/UA-51467836-1/glena/datosdemoc)](http://germanlena.com.ar)
