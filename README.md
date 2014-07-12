@@ -32,6 +32,4 @@ Próximos pasos
 - [ ] Implementar una interfaz más "amigable" para acceder los datos desde la WEB
 
 
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/glena/datosdemoc/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
-[![Analytics](https://ga-beacon.appspot.com/UA-32429094-1/glena/datosdemoc)](https://github.com/glena/datosdemoc)
+[![Analytics](https://ga-beacon.appspot.com/UA-51467836-1/glena/datosdemoc)](https://germanlena.com.ar)
