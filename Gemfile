@@ -3,8 +3,8 @@ gem 'rails', '4.0.0'
 gem 'protected_attributes'
 group :development, :test do
   gem 'sqlite3'
-  gem 'ruby-debug-base19x'
-  gem 'ruby-debug-ide'
+  # gem 'ruby-debug-base19x'
+  # gem 'ruby-debug-ide'
 end
 #group :production do
 #  gem 'mysql2'

@@ -45,13 +45,17 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.3)
-    debugger-ruby_core_source (1.2.3)
     directory_watcher (1.5.1)
+    domain_name (0.5.24)
+      unf (>= 0.0.5, < 1.0.0)
     erubis (2.7.0)
     execjs (2.0.2)
     fast-stemmer (1.0.2)
+    ffi (1.9.10-x86-mingw32)
     hike (1.2.3)
     hpricot (0.8.6)
+    http-cookie (1.0.2)
+      domain_name (~> 0.5)
     i18n (0.6.9)
     jbuilder (1.5.3)
       activesupport (>= 3.0.0)
@@ -78,6 +82,7 @@ GEM
     mongo (1.9.2)
       bson (~> 1.9.2)
     multi_json (1.8.2)
+    netrc (0.10.3)
     polyglot (0.3.3)
     posix-spawn (0.3.8)
     protected_attributes (1.0.3)
@@ -107,11 +112,15 @@ GEM
     rdiscount (2.1.7)
     rdoc (3.12.2)
       json (~> 1.4)
-    ruby-debug-base19x (0.11.30.pre15)
-      debugger-ruby_core_source (> 0)
-      rake (>= 0.8.1)
-    ruby-debug-ide (0.4.22)
-      rake (>= 0.8.1)
+    rest-client (1.8.0)
+      http-cookie (>= 1.0.2, < 2.0)
+      mime-types (>= 1.16, < 3.0)
+      netrc (~> 0.7)
+    rest-client (1.8.0-x86-mingw32)
+      ffi (~> 1.9)
+      http-cookie (>= 1.0.2, < 2.0)
+      mime-types (>= 1.16, < 3.0)
+      netrc (~> 0.7)
     ruby-ole (1.2.11.7)
     sass (3.2.13)
     sass-rails (4.0.1)
@@ -148,6 +157,10 @@ GEM
     uglifier (2.4.0)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.7.1)
+    unf_ext (0.0.7.1-x86-mingw32)
     uuidtools (2.1.4)
     yajl-ruby (1.1.0)
     yajl-ruby (1.1.0-x86-mingw32)
@@ -166,8 +179,7 @@ DEPENDENCIES
   mongo
   protected_attributes
   rails (= 4.0.0)
-  ruby-debug-base19x
-  ruby-debug-ide
+  rest-client
   sass-rails (~> 4.0.0)
   sdoc
   smarter_csv
